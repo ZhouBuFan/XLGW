@@ -22,5 +22,21 @@ Route::group(['prefix' => 'star'],function($router) {
     Route::post('image',[\App\Http\Controllers\PostStarController::class,'image']);
 });
 Route::group(['prefix' => 'list'],function($router) {
-    Route::post('enterprise',[\App\Http\Controllers\ListController::class,'enterPrise']);
+    Route::get('enterprise',[\App\Http\Controllers\ListController::class,'enterPrise']);
+    Route::get('industry',[\App\Http\Controllers\ListController::class,'Industry']);
+    Route::get('media',[\App\Http\Controllers\ListController::class,'Media']);
+});
+Route::group(['prefix' => 'details'],function($router) {
+    Route::get('enterprise',[\App\Http\Controllers\DetailController::class,'Details']);
+    Route::get('industry',[\App\Http\Controllers\DetailController::class,'Details']);
+    Route::get('media',[\App\Http\Controllers\DetailController::class,'Details']);
+});
+Route::group(['prefix' => 'paging'],function($router) {
+    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
+    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
+    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
+    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
+    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
+    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
+    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
 });

@@ -14,4 +14,7 @@ Route::group([
     $router->get('/', 'HomeController@index')->name('home');
     $router->resource('stars', StarController::class);
     $router->resource('enterpriselist', EnterpriseController::class);
+    $router->resource('industry', IndustryController::class);
+    $router->resource('media', MediaController::class);
+    $router->resource('articles', ArticleController::class);
 });

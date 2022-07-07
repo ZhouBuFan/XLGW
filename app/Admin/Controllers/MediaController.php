@@ -8,14 +8,14 @@ use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class EnterpriseController extends AdminController
+class MediaController extends AdminController
 {
     /**
      * Title for current resource.
      *
      * @var string
      */
-    protected $title = '企业动态';
+    protected $title = '媒体咨询';
 
     /**
      * Make a grid builder.
@@ -25,9 +25,8 @@ class EnterpriseController extends AdminController
     protected function grid()
     {
         $grid = new Grid(new Enterprise());
-
+        $grid->model()->where('type', '=', 2);
         $grid->column('id', __('Id'));
-        $grid->model()->where('type', '=', 0);
         $grid->column('title_zh', __('中文标题'));
         $grid->column('title_en', __('英文标题'));
         $grid->column('introduction_zh', __('中文简介'));
@@ -78,11 +77,11 @@ class EnterpriseController extends AdminController
         $form->text('title_en', __('英文标题'));
         $form->text('introduction_zh', __('中文简介'));
         $form->text('introduction_en', __('英文简介'));
-        $form->UEditor('content_zh', __('中文文章'))->options(['initialFrameHeight' => 400]);
-        $form->UEditor('content_en', __('英文文章'))->options(['initialFrameHeight' => 400]);
+        $form->UEditor('content_zh', __('中文文章'))->options(['initialFrameHeight' => 400]);;
+        $form->UEditor('content_en', __('英文文章'))->options(['initialFrameHeight' => 400]);;
         $form->hidden('type');
         $form->saving(function (Form $form) {
-            $form->type =0;
+            $form->type =2;
         });
 
         return $form;

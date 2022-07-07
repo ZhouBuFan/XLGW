@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\ChoiceNumber;
 use App\Models\Enterprise;
+use App\Models\Link;
 use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -150,6 +151,16 @@ class ListController extends Controller
                 'msg'  => '语言调取失败',
             ]);
         }
+
+    }
+    public function Link(Request $request){
+        $page=$request->get('page');
+        $limit = $request->get('limit');
+        $detail=Link::get()->forPage($page,$limit)->toArray();
+        return response()->json([
+            'code' => 0,
+            'data'  => $detail,
+        ]);
 
     }
 }

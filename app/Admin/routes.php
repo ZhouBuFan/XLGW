@@ -18,4 +18,5 @@ Route::group([
     $router->resource('media', MediaController::class);
     $router->resource('articles', ArticleController::class);
     $router->resource('recruits', RecruitController::class);
+    $router->resource('links', LinkController::class);
 });

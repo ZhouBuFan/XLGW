@@ -26,6 +26,7 @@ Route::group(['prefix' => 'list'],function($router) {
     Route::get('industry',[\App\Http\Controllers\ListController::class,'Industry']);
     Route::get('media',[\App\Http\Controllers\ListController::class,'Media']);
     Route::get('recruit',[\App\Http\Controllers\RecruitController::class,'RecruitList']);
+    Route::get('link',[\App\Http\Controllers\ListController::class,'Link']);
 });
 Route::group(['prefix' => 'details'],function($router) {
     Route::get('enterprise',[\App\Http\Controllers\DetailController::class,'Details']);

@@ -33,10 +33,12 @@ Route::group(['prefix' => 'details'],function($router) {
 });
 Route::group(['prefix' => 'paging'],function($router) {
     Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
-    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
-    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
-    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
-    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
-    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
-    Route::get('corporate/{title?}',[\App\Http\Controllers\ArticleController::class,'Corporate']);
+    Route::get('responsibility/{title?}',[\App\Http\Controllers\ArticleController::class,'Responsibility']);
+    Route::get('original/{title?}',[\App\Http\Controllers\ArticleController::class,'Original']);
+    Route::get('electronics/{title?}',[\App\Http\Controllers\ArticleController::class,'Electronics']);
+    Route::get('journal/{title?}',[\App\Http\Controllers\ArticleController::class,'Journal']);
+    Route::get('export/{title?}',[\App\Http\Controllers\ArticleController::class,'Export']);
+    Route::get('bookFair/{title?}',[\App\Http\Controllers\ArticleController::class,'BookFair']);
+    Route::get('data/{title?}',[\App\Http\Controllers\ArticleController::class,'Data']);
+    Route::get('professional/{title?}',[\App\Http\Controllers\ArticleController::class,'Professional']);
 });

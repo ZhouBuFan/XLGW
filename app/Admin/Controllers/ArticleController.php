@@ -34,8 +34,8 @@ class ArticleController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('title', __('页面'));
-//        $grid->column('container_zh', __('中文内容'));
-//        $grid->column('container_en', __('英文内容'));
+    //        $grid->column('container_zh', __('中文内容'));
+    //        $grid->column('container_en', __('英文内容'));
         $grid->column('created_at', __('创建时间'));
         $grid->column('updated_at', __('修改时间'));
         return $grid;
@@ -73,7 +73,7 @@ class ArticleController extends AdminController
     {
         $form = new Form(new Article());
 
-        $form->text('title', __('页面'));
+        $form->text('title', __('页面'))->readonly();;
         $form->UEditor('container_zh', __('中文内容'))->options(['initialFrameHeight' => 400]);;
         $form->UEditor('container_en', __('英文内容'))->options(['initialFrameHeight' => 400]);;
 

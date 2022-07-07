@@ -31,7 +31,7 @@ class ArticleController extends AdminController
             $actions->disableDelete();
 
         });
-
+        $grid->disableCreateButton();
         $grid->column('id', __('Id'));
         $grid->column('title', __('页面'));
     //        $grid->column('container_zh', __('中文内容'));
